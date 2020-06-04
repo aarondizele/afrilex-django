@@ -1,0 +1,17 @@
+{% load static %}
+
+<h6 class="font-weight-bold">Navbar</h6>
+
+<img src="{% static 'images/LogoLibala.svg' %}" alt="" style="height: 80px;">
+
+<!-- Django Way -->
+<ul class="list-inline">
+    <li><a href="{% url 'home' %}">Accueil</a></li>
+    <li><a href="{% url 'about' %}">A propos</a></li>
+    {% if not request.user.is_authenticated %}
+    <li><a href="{% url 'login' %}">Se connecter</a></li>
+    <li><a href="{% url 'signup' %}">S'inscrire</a></li>
+    {% else %}
+    <li><a href="{% url 'logout' %}">Se déconnecter</a></li>
+    {% endif %}
+</ul>

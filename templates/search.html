@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block head_title %}{{title}}{% endblock %}
+
+{% block content %}
+
+<!-- Navbar -->
+{% include "navbar.html" %}
+
+<h1>Search Page</h1>
+Recherche pour <strong>{{query}}</strong> à <strong>{{place}}</strong>
+<p>
+<form method="get" class="d-flex flex-row align-items-center">
+    {{custom_filter.form}}
+    <button type="submit" class="btn btn-outline-primary rounded-pill">Filter</button>
+</form>
+</p>
+<div>
+    Experts {{total_experts}}
+    Firmes {{total_offices}}
+</div>
+<!-- Footer -->
+{% include "footer.html" %}
+
+{% endblock %}

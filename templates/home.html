@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block head_title %}{{title}}{% endblock %}
+
+{% block content %}
+
+<!-- Navbar -->
+{% include "navbar.html" %}
+
+{% for message in messages %}
+<p>{{message}}</p>
+{% endfor %}
+
+<h1>Home Page</h1>
+
+<!-- Footer -->
+{% include "footer.html" %}
+
+{% endblock %}

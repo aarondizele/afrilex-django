@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block head_title %}{{title}}{% endblock %}
+
+{% block content %}
+
+<h1>Add Profile Page</h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <!-- {{form.as_p}} -->
+    {{ form.management }}
+    {% for f in form %}
+        <div class="form-group">
+            {{f}}
+        </div>
+    {% endfor %}
+
+    <button type="submit" class="btn btn-primary">Envoyer</button>
+</form>
+
+{% endblock %}
